@@ -6,6 +6,8 @@ import ColorBox from "./components/ColorBox";
 import PostList from "./components/PostList";
 import Pagination from "./components/Pagination";
 import PostFilterForm from "./components/PostFilterForm";
+import Clock from "./components/Clock";
+import MagicBox from "./components/MagicBox";
 
 function App() {
   const [Text, setText] = useState("");
@@ -14,7 +16,7 @@ function App() {
   }
   // function handleSubmit({ keyCode }) {
   //   if (keyCode === 13) {
-  //     // TODO something here.
+  // TODO something here.
   //   }
   // }
   const [postList, setpostList] = useState([]);
@@ -29,6 +31,7 @@ function App() {
     title_like: "",
     // TODO Add Filter, Seach: ....
   });
+  const [showClock, setShowClock] = useState(true);
   useEffect(() => {
     async function fetchData() {
       // TODO: Call API here and setSate.
@@ -65,9 +68,12 @@ function App() {
       />
       <ColorBox />
       <TodoList /> */}
-      <PostFilterForm onSubmit={handleSubmit} />
+      {/* <PostFilterForm onSubmit={handleSubmit} />
       <PostList posts={postList} />
-      <Pagination pagination={pagination} onPageChange={handlePageChange} />
+      <Pagination pagination={pagination} onPageChange={handlePageChange} /> */}
+      {showClock && <Clock />}
+      <button onClick={() => setShowClock(false)}>Hide Clock</button>
+      <MagicBox />
     </div>
   );
 }

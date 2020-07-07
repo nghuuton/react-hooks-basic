@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
-
 function PostFilterForm(props) {
   const { onSubmit } = props;
   const [searchTerm, setSearchTerm] = useState("");
